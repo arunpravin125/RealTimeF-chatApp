@@ -47,7 +47,7 @@ console.log("messagedSeened",conversationId)
       return ()=>socket?.off("messageSeened")
 
 
- },[selectedConversation,socket])
+ },[messages,selectedConversation,socket])
 
   const handleSelectConversation = () => {
     setSeletedGroup("")
