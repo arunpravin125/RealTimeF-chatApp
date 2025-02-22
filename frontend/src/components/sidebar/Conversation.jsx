@@ -18,7 +18,7 @@ const Conversation = ({ conversation }) => {
 
 
  useEffect(()=>{
-  const messageFromOther = messages.length && messages[messages.length-1].senderId !== authUser._id
+  const messageFromOther = messages?.length && messages[messages.length-1]?.senderId !== authUser?._id
  console.log("messageFromOther",messageFromOther)
 
       if(messageFromOther && selectedConversation){
@@ -47,7 +47,7 @@ console.log("messagedSeened",conversationId)
       return ()=>socket?.off("messageSeened")
 
 
- },[messages,selectedConversation,socket])
+ },[selectedConversation,socket])
 
   const handleSelectConversation = () => {
     setSeletedGroup("")

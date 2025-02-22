@@ -1,8 +1,9 @@
 import React from 'react'
 import MessageHearder from './MessageHearder'
 import Messages from './Messages'
-import SendMessage from './sendMessage'
+
 import { useAuthContext } from '../../context/AuthContext'
+import SendMessage from '../MessageContainer/SendMessage'
 
 const MessageContainer = () => {
   const { selectedConversation, authUser, setSelectedConversation, conversations, setConversations } = useAuthContext()
@@ -19,8 +20,8 @@ const MessageContainer = () => {
   <div className="flex flex-col " >
   <img className="h-20 w-20 flex justify-center items-center"
       alt="Tailwind CSS chat bubble component"
-      src={authUser.profilePic}/>
-    <h1>{authUser.fullName}</h1>
+      src={authUser?.profilePic}/>
+    <h1>{authUser?.fullName}</h1>
   </div>
 </div>
 )}

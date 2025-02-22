@@ -8,10 +8,11 @@ import { notificationRoute } from "./routes/notification.route.js"
 import { app, server } from "./socket/socket.js"
 import { groupConversations } from "./routes/groupConversation.route.js"
 import path from "path"
-
+import cors from 'cors'
 app.use(express.json())
 dotenv.config()
 app.use(cookieParser())
+app.use(cors())
 const PORT = process.env.PORT || 3501
 const __dirname = path.resolve()
 
